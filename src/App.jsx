@@ -17,7 +17,7 @@ export default function App() {
 
       <div className="flex space-x-6 mb-10 text-3xl items-center">
         
-        <a href="https://bounce.mcmaster.ca" target="_blank" className="hover:text-yellow-400 flex flex-col items-center">
+        <a href="https://www.bouncelife.com/organizations/685c7166831541b7d83256ea" target="_blank" className="hover:text-yellow-400 flex flex-col items-center">
           <img src={Bounce} alt="Bounce Logo" className="w-20 h-20 mb-1" />
         </a>
 
