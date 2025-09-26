@@ -4,6 +4,7 @@ import Bounce from "./assets/bounce.svg";
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white text-center px-4">
+      <img src="/logo.png" alt="McMaster Cyber Society Logo" className="w-32 h-34 mb-6" />
       <h1 className="text-4xl md:text-6xl font-bold mb-6">
         McMaster Cyber Society
       </h1>
