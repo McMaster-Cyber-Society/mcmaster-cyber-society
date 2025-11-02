@@ -24,7 +24,7 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center">
-                <FaShieldAlt className="text-5xl" />
+                <img src="logo.png" alt="McMaster Cyber Society Logo" className="w-16 h-16" />
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default function Home() {
 
           {/* Social Links */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <SocialButton href="https://www.bouncelife.com/organizations/685c7166831541b7d83256ea" icon="🎯" label="Bounce" />
+            <SocialButton href="https://www.bouncelife.com/organizations/685c7166831541b7d83256ea" imgSrc="src/assets/bounce.svg" />
             <SocialButton href="https://discord.gg/TCGaMGDVuA" icon={<FaDiscord />} label="Discord" color="hover:bg-indigo-500/20 hover:border-indigo-500" />
             <SocialButton href="https://www.instagram.com/cybersociety.mcmaster" icon={<FaInstagram />} label="Instagram" color="hover:bg-pink-500/20 hover:border-pink-500" />
             <SocialButton href="https://www.linkedin.com/company/mcmaster-cyber-society" icon={<FaLinkedin />} label="LinkedIn" color="hover:bg-blue-500/20 hover:border-blue-500" />

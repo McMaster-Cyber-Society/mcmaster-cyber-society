@@ -1,4 +1,3 @@
-import { FaShieldAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
@@ -9,7 +8,7 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3 group">
           <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            <FaShieldAlt className="text-xl" />
+            <img src="logo.png" alt="McMaster Cyber Society Logo" className="w-15 h-10" />
           </div>
           <span className="text-lg font-bold hidden sm:block">McMaster Cyber</span>
         </Link>
