@@ -8,18 +8,50 @@ import Footer from "../components/Footer";
 // Sample events data
 const upcomingEvent = {
   id: 1,
-  title: "Kickoff Meeting & Introduction to Cybersecurity",
-  date: "October 1st, 2025",
+  title: "CyberWeekly Session",
+  date: "November 5, 2025",
   time: "6:00 PM - 7:00 PM",
-  location: "ETB 237",
-  description: "Join us for our first event! Meet the team, learn about our goals, and get an introduction to the world of cybersecurity.",
-  type: "Meeting",
+  location: "ETB 124",
+  description: "Join us for our recurring CyberWeekly session! We’ll be solving fun Capture the Flag (CTF) challenges together, a great way to learn cybersecurity hands-on.",
+  type: "Workshop",
   featured: true
 };
 
 const pastEvents = [
   {
     id: 2,
+    title: "Securinets CTF Quals 2025",
+    date: "October 4 - October 5, 2025",
+    description: "A thrilling, global cybersecurity competition spanning diverse challenge categories. Compete, learn, and push your skills to the next level.",
+    type: "Competition",
+  },
+  {
+    id: 3,
+    title: "V1T CTF",
+    date: "October 31 - November 2, 2025",
+    description: "V1t CTF 2025 is a beginner-friendly and intermediate Capture The Flag competition organized by V1t.",
+    type: "Competition",
+  },
+  {
+    id: 4,
+    title: "First-Ever CyberWeekly",
+    date: "October 29, 2025",
+    time: "6:00 PM - 7:00 PM",
+    location: "BSB B142",
+    description: "Join Mac Cyber Society for our first-ever CyberWeekly session! We’ll be solving fun Capture the Flag (CTF) challenges together, a great way to learn cybersecurity hands-on.",
+    type: "Workshop",
+  },
+  {
+    id: 5,
+    title: "Kickoff Meeting & Introduction to Cybersecurity",
+    date: "October 1st, 2025",
+    time: "6:00 PM - 7:00 PM",
+    location: "ETB 237",
+    description: "Join us for our first event! Meet the team, learn about our goals, and get an introduction to the world of cybersecurity.",
+    type: "Meeting",
+  },
+  {
+    id: 6,
     title: "CTF Workshop: Web Security",
     date: "September 15, 2025",
     time: "5:00 PM - 7:00 PM",
@@ -28,7 +60,7 @@ const pastEvents = [
     type: "Workshop"
   },
   {
-    id: 3,
+    id: 7,
     title: "Guest Speaker: Industry Security Practices",
     date: "September 8, 2025",
     time: "6:00 PM - 7:30 PM",
@@ -37,7 +69,7 @@ const pastEvents = [
     type: "Speaker"
   },
   {
-    id: 4,
+    id: 8,
     title: "Networking Social",
     date: "September 1, 2025",
     time: "7:00 PM - 9:00 PM",
@@ -46,7 +78,7 @@ const pastEvents = [
     type: "Social"
   },
   {
-    id: 5,
+    id: 9,
     title: "Linux Fundamentals Workshop",
     date: "August 25, 2025",
     time: "5:00 PM - 7:00 PM",
