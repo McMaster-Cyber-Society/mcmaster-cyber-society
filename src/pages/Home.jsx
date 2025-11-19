@@ -19,30 +19,7 @@ const upcomingEvent = {
 
 const pastEvents = [
   {
-    id: 2,
-    title: "Securinets CTF Quals 2025",
-    date: "October 4 - October 5, 2025",
-    description: "A thrilling, global cybersecurity competition spanning diverse challenge categories. Compete, learn, and push your skills to the next level.",
-    type: "Competition",
-  },
-  {
-    id: 3,
-    title: "V1T CTF",
-    date: "October 31 - November 2, 2025",
-    description: "V1t CTF 2025 is a beginner-friendly and intermediate Capture The Flag competition organized by V1t.",
-    type: "Competition",
-  },
-  {
-    id: 4,
-    title: "First-Ever CyberWeekly",
-    date: "October 29, 2025",
-    time: "6:00 PM - 7:00 PM",
-    location: "BSB B142",
-    description: "Join Mac Cyber Society for our first-ever CyberWeekly session! We’ll be solving fun Capture the Flag (CTF) challenges together, a great way to learn cybersecurity hands-on.",
-    type: "Workshop",
-  },
-  {
-    id: 5,
+    id: 1,
     title: "Kickoff Meeting & Introduction to Cybersecurity",
     date: "October 1st, 2025",
     time: "6:00 PM - 7:00 PM",
@@ -51,16 +28,30 @@ const pastEvents = [
     type: "Meeting",
   },
   {
-    id: 6,
-    title: "CTF Workshop: Web Security",
-    date: "September 15, 2025",
-    time: "5:00 PM - 7:00 PM",
-    location: "ITB 137",
-    description: "Hands-on workshop covering OWASP Top 10 vulnerabilities and web exploitation techniques.",
-    type: "Workshop"
+    id: 2,
+    title: "Securinets CTF Quals 2025",
+    date: "October 4 - October 5, 2025",
+    description: "A thrilling, global cybersecurity competition spanning diverse challenge categories. Compete, learn, and push your skills to the next level.",
+    type: "Competition",
   },
   {
-    id: 7,
+    id: 3,
+    title: "First-Ever CyberWeekly",
+    date: "October 29, 2025",
+    time: "6:00 PM - 7:00 PM",
+    location: "BSB B142",
+    description: "Join Mac Cyber Society for our first-ever CyberWeekly session! We’ll be solving fun Capture the Flag (CTF) challenges together, a great way to learn cybersecurity hands-on.",
+    type: "Workshop",
+  },
+  {
+    id: 4,
+    title: "V1T CTF",
+    date: "October 31 - November 2, 2025",
+    description: "V1t CTF 2025 is a beginner-friendly and intermediate Capture The Flag competition organized by V1t.",
+    type: "Competition",
+  },
+  {
+    id: 6,
     title: "Guest Speaker: Industry Security Practices",
     date: "September 8, 2025",
     time: "6:00 PM - 7:30 PM",
@@ -68,24 +59,6 @@ const pastEvents = [
     description: "Industry professional shares insights on real-world security practices and career paths.",
     type: "Speaker"
   },
-  {
-    id: 8,
-    title: "Networking Social",
-    date: "September 1, 2025",
-    time: "7:00 PM - 9:00 PM",
-    location: "Student Center",
-    description: "Meet fellow cybersecurity enthusiasts in a casual setting.",
-    type: "Social"
-  },
-  {
-    id: 9,
-    title: "Linux Fundamentals Workshop",
-    date: "August 25, 2025",
-    time: "5:00 PM - 7:00 PM",
-    location: "ITB 137",
-    description: "Learn essential Linux commands and system administration basics.",
-    type: "Workshop"
-  }
 ];
 
 // Main App Component
