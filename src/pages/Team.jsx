@@ -13,7 +13,7 @@ export default function Team() {
     <div className="min-h-screen py-20 px-4 pt-32">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
             Our Team
           </h2>
           <p className="text-xl text-gray-300">
@@ -23,7 +23,7 @@ export default function Team() {
 
         {members.length === 0 || members[0].name === "Position Open" ? (
           <div className="text-center py-20">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-800 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#1a0a0a] rounded-full mb-6">
               <FaUsers className="text-4xl text-gray-600" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Team Formation in Progress</h3>
@@ -32,7 +32,7 @@ export default function Team() {
             </p>
             <a 
               href="mailto:cybersoc@mcmaster.ca"
-              className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
+              className="inline-block bg-gradient-to-r from-red-600 to-red-800 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-red-500/50 transition-all"
             >
               Get in Touch
             </a>
@@ -42,13 +42,13 @@ export default function Team() {
             {members.map((member, idx) => (
               <div 
                 key={idx}
-                className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all group"
+                className="bg-[#1a0a0a] rounded-2xl p-6 border border-gray-700 hover:border-red-600/50 transition-all group"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <span className="text-2xl font-bold">{member.name[0]}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-cyan-400 font-semibold mb-2">{member.role}</p>
+                <p className="text-red-600 font-semibold mb-2">{member.role}</p>
                 <p className="text-gray-400 text-sm">{member.description}</p>
               </div>
             ))}
