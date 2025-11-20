@@ -88,16 +88,8 @@ export default function Home() {
 
         <div className="relative z-10 text-center max-w-4xl">
           {/* Logo */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center">
-                <FaShieldAlt className="text-5xl" />
-              </div>
-            </div>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+          <div className="mb-8 flex justify-center"> <div className="relative group"> <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div> <div className="relative w-24 h-24 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl flex items-center justify-center"> <FaShieldAlt className="text-5xl" /> </div> </div> </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent">
             McMaster Cyber Society
           </h1>
           
@@ -107,10 +99,27 @@ export default function Home() {
 
           {/* Event Card */}
           <div className="mb-12 inline-block">
-            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-2xl p-6 backdrop-blur-sm">
+            <div className="bg-gradient-to-r from-red-600/10 to-red-800/10 border border-red-600/30 rounded-2xl p-6 backdrop-blur-sm">
               <div className="flex items-center justify-center gap-2 mb-3">
+                <FaCalendarAlt className="text-red-600" />
+                <span className="text-red-600 font-semibold text-sm uppercase tracking-wide">First Event</span>
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">{upcomingEvent.title}</h3>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4 text-gray-300">
+                <div className="flex items-center gap-2">
                 <FaCalendarAlt className="text-cyan-400" />
-                <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wide">First Event</span>
+                  <span className="font-semibold">{upcomingEvent.date}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FaClock className="text-cyan-400" />
+                  <span>{upcomingEvent.time}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FaMapMarkerAlt className="text-cyan-400" />
+                  <span>{upcomingEvent.location}</span>
+                </div>
               </div>
               
               <p className="text-gray-300 mb-6">{upcomingEvent.description}</p>
@@ -140,7 +149,7 @@ export default function Home() {
 
           <Link 
             to="/info"
-            className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all hover:scale-105"
+            className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105"
           >
             Learn More
           </button>
