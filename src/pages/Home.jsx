@@ -109,7 +109,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4 text-gray-300">
                 <div className="flex items-center gap-2">
-                <FaCalendarAlt className="text-cyan-400" />
+                  <FaCalendarAlt className="text-cyan-400" />
                   <span className="font-semibold">{upcomingEvent.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export default function Home() {
             className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105"
           >
             Learn More
-          </button>
+          </Link>
         </div>
       </div>
 
