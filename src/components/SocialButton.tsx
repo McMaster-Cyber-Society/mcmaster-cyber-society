@@ -4,7 +4,7 @@ export default function SocialButton({ href, icon, emoji, label, color = "hover:
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`flex items-center gap-2 px-6 py-3 rounded-full border border-gray-700 bg-gray-800/50 backdrop-blur-sm transition-all ${color} group`}
+      className={`flex items-center gap-2 px-6 py-3 rounded-full border border-gray-700 bg-[#1a0a0a] backdrop-blur-sm transition-all ${color} group`}
     >
       {emoji ? (
         <span className="text-xl">{emoji}</span>

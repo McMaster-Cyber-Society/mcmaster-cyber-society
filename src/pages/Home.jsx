@@ -80,24 +80,16 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-gray-900 text-white">
         {/* Animated background grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
+<div className="absolute inset-0 bg-[linear-gradient(to_right,#3c0d0d_1px,transparent_1px),linear-gradient(to_bottom,#3c0d0d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
         
         {/* Gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-red-600/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
 
         <div className="relative z-10 text-center max-w-4xl">
           {/* Logo */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center">
-                <img src="logo.png" alt="McMaster Cyber Society Logo" className="w-16 h-16" />
-              </div>
-            </div>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+          <div className="mb-8 flex justify-center"> <div className="relative group"> <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity"></div> <div className="relative w-24 h-24 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl flex items-center justify-center"> <FaShieldAlt className="text-5xl" /> </div> </div> </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent">
             McMaster Cyber Society
           </h1>
           
@@ -105,12 +97,12 @@ export default function Home() {
             Join the community defending tomorrow's digital frontier
           </p>
 
-          {/* Featured Event Card */}
-          <div className="mb-12">
-            <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border-2 border-cyan-500/50 rounded-3xl p-8 backdrop-blur-sm shadow-2xl shadow-cyan-500/20 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <FaCalendarAlt className="text-cyan-400 text-xl" />
-                <span className="text-cyan-400 font-bold text-sm uppercase tracking-wide">Next Event</span>
+          {/* Event Card */}
+          <div className="mb-12 inline-block">
+            <div className="bg-gradient-to-r from-red-600/10 to-red-800/10 border border-red-600/30 rounded-2xl p-6 backdrop-blur-sm">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <FaCalendarAlt className="text-red-600" />
+                <span className="text-red-600 font-semibold text-sm uppercase tracking-wide">First Event</span>
               </div>
               
               <h3 className="text-2xl md:text-3xl font-bold mb-4">{upcomingEvent.title}</h3>
@@ -155,9 +147,12 @@ export default function Home() {
             <SocialButton href="https://www.linkedin.com/company/mcmaster-cyber-society" icon={<FaLinkedin />} label="LinkedIn" color="hover:bg-blue-500/20 hover:border-blue-500" />
           </div>
 
-          <button className="inline-block bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105">
+          <Link 
+            to="/info"
+            className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105"
+          >
             Learn More
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -219,7 +214,7 @@ export default function Home() {
               icon={<FaCode />}
               title="Hands-On Labs"
               description="Practice real-world security scenarios in our interactive workshops"
-              gradient="from-cyan-500 to-blue-500"
+              gradient="from-red-500 to-red-600"
             />
             <FeatureCard 
               icon={<FaTrophy />}

@@ -8,7 +8,7 @@ export default function Info() {
     <div className="min-h-screen py-20 px-4 pt-32">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
             About Us
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -16,15 +16,15 @@ export default function Info() {
           </p>
         </div>
 
-        <div className="bg-gray-800/50 rounded-3xl p-8 md:p-12 border border-gray-700 mb-8">
-          <h3 className="text-2xl font-bold mb-4 text-cyan-400">Our Mission</h3>
+        <div className="bg-[#1a0a0a] rounded-3xl p-8 md:p-12 border border-gray-700 mb-8">
+          <h3 className="text-2xl font-bold mb-4 text-red-600">Our Mission</h3>
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
             The McMaster Cyber Society is a student-run club focused on cybersecurity education,
             hands-on workshops, capture-the-flag competitions, and community building. We welcome
             students of all backgrounds, whether you're curious, starting out, or already experienced.
           </p>
 
-          <h3 className="text-2xl font-bold mb-6 text-cyan-400">What We Do</h3>
+          <h3 className="text-2xl font-bold mb-6 text-red-600">What We Do</h3>
           <div className="grid md:grid-cols-2 gap-4">
             <ActivityCard title="Weekly Study Sessions" description="Collaborative learning and peer support" />
             <ActivityCard title="Workshops & Labs" description="Hands-on practice with real tools" />
@@ -33,7 +33,7 @@ export default function Info() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl p-8 border border-cyan-500/30 text-center">
+        <div className="bg-gradient-to-r from-red-600/10 to-red-800/10 rounded-3xl p-8 border border-red-600/30 text-center">
           <h3 className="text-2xl font-bold mb-4">Get Involved</h3>
           <p className="text-gray-300 mb-6">
             Join our Discord community to stay updated on events, connect with members, and start your cybersecurity journey.
