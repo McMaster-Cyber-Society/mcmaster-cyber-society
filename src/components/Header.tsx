@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { FaShieldAlt } from "react-icons/fa";
 
 // Header Component
 export default function Header() {

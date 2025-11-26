@@ -23,7 +23,7 @@ export default function Team() {
 
         {members.length === 0 || members[0].name === "Position Open" ? (
           <div className="text-center py-20">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-800 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#1a0a0a] rounded-full mb-6">
               <FaUsers className="text-4xl text-gray-600" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Team Formation in Progress</h3>

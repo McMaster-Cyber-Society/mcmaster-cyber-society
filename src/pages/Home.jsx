@@ -4,6 +4,7 @@ import SocialButton from "../components/SocialButton";
 import EventCard from "../components/EventCard";
 import FeatureCard from "../components/FeatureCard";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 // Sample events data
 const upcomingEvent = {
@@ -80,7 +81,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-gray-900 text-white">
         {/* Animated background grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
+<div className="absolute inset-0 bg-[linear-gradient(to_right,#3c0d0d_1px,transparent_1px),linear-gradient(to_bottom,#3c0d0d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
         
         {/* Gradient orbs */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-red-900/40 rounded-full blur-3xl animate-pulse"></div>
@@ -153,9 +154,12 @@ export default function Home() {
             <SocialButton href="https://www.linkedin.com/company/mcmaster-cyber-society" icon={<FaLinkedin />} label="LinkedIn" color="hover:bg-blue-500/20 hover:border-blue-500" />
           </div>
 
-          <button className="inline-block bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105">
+          <Link 
+            to="/info"
+            className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105"
+          >
             Learn More
-          </button>
+          </Link>
         </div>
       </div>
 
