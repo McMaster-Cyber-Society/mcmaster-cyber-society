@@ -4,6 +4,7 @@ import SocialButton from "../components/SocialButton";
 import EventCard from "../components/EventCard";
 import FeatureCard from "../components/FeatureCard";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 // Sample events data
 const upcomingEvent = {
