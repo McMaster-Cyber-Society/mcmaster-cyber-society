@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto text-center text-gray-400 text-sm">
         <p>© {new Date().getFullYear()} McMaster Cyber Society. All Rights Reserved.</p>
         <p className="mt-2">
-          <a href="mailto:cybersoc@mcmaster.ca" className="hover:text-red-6600 transition-colors">cybersoc@mcmaster.ca</a>
+          <a href="mailto:cybersoc@mcmaster.ca" className="hover:text-red-400 transition-colors">cybersoc@mcmaster.ca</a>
         </p>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-export default function SocialButton({ href, icon, emoji, label, color = "hover:bg-cyan-500/20 hover:border-cyan-500" }) {
+export default function SocialButton({ href, icon, emoji, label, color = "hover:bg-red-900/30 hover:border-red-500" }) {
   return (
     <a 
       href={href}
