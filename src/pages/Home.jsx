@@ -1,5 +1,5 @@
 import { FaDiscord, FaInstagram, FaLinkedin, FaShieldAlt, FaUsers, FaTrophy, FaCalendarAlt, FaCode, FaClock, FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import SocialButton from "../components/SocialButton";
 import EventCard from "../components/EventCard";
 import FeatureCard from "../components/FeatureCard";
@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 const upcomingEvent = {
   id: 1,
   title: "CyberWeekly Session",
-  date: "November 5, 2025",
+  date: "Every Monday until April 6th, 2026",
   time: "6:00 PM - 7:00 PM",
-  location: "ETB 124",
+  location: "ETB 228",
   description: "Join us for our recurring CyberWeekly session! We’ll be solving fun Capture the Flag (CTF) challenges together, a great way to learn cybersecurity hands-on.",
   type: "Workshop",
   featured: true
@@ -66,6 +66,7 @@ const pastEvents = [
 export default function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const cardWidth = 320;
+  const scrollContainerRef = useRef(null);
 
   const scrollLeft = () => {
     setScrollPosition(Math.max(scrollPosition - cardWidth, 0));
@@ -75,6 +76,31 @@ export default function Home() {
     const maxScroll = (pastEvents.length - 1) * cardWidth;
     setScrollPosition(Math.min(scrollPosition + cardWidth, maxScroll));
   };
+
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (scrollContainerRef.current && scrollContainerRef.current.contains(e.target)) {
+        e.preventDefault();
+        const maxScroll = (pastEvents.length - 1) * cardWidth;
+        // Handle both horizontal (deltaX) and vertical (deltaY) scrolling
+        // Trackpads use deltaX for horizontal gestures, deltaY for vertical
+        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        const newPosition = scrollPosition + delta;
+        setScrollPosition(Math.max(0, Math.min(newPosition, maxScroll)));
+      }
+    };
+
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, [scrollPosition, cardWidth]);
 
   return (
     <>
@@ -194,7 +220,10 @@ export default function Home() {
             </button>
 
             {/* Events Scroll Container */}
-            <div className="overflow-x-auto overflow-y-hidden scrollbar-hide md:overflow-hidden snap-x snap-mandatory">
+            <div 
+              ref={scrollContainerRef}
+              className="overflow-x-auto overflow-y-hidden scrollbar-hide md:overflow-hidden snap-x snap-mandatory"
+            >
               <div 
                 className="flex gap-6 md:transition-transform md:duration-500 md:ease-out pb-4"
                 style={{ transform: `translateX(-${scrollPosition}px)` }}
