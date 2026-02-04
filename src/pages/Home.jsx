@@ -1,5 +1,5 @@
 import { FaDiscord, FaInstagram, FaLinkedin, FaShieldAlt, FaUsers, FaTrophy, FaCalendarAlt, FaCode, FaClock, FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import SocialButton from "../components/SocialButton";
 import EventCard from "../components/EventCard";
 import FeatureCard from "../components/FeatureCard";
@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 const upcomingEvent = {
   id: 1,
   title: "CyberWeekly Session",
-  date: "November 5, 2025",
+  date: "Every Monday until April 6th, 2026",
   time: "6:00 PM - 7:00 PM",
-  location: "ETB 124",
+  location: "ETB 228",
   description: "Join us for our recurring CyberWeekly session! We’ll be solving fun Capture the Flag (CTF) challenges together, a great way to learn cybersecurity hands-on.",
   type: "Workshop",
   featured: true
@@ -66,6 +66,7 @@ const pastEvents = [
 export default function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const cardWidth = 320;
+  const scrollContainerRef = useRef(null);
 
   const scrollLeft = () => {
     setScrollPosition(Math.max(scrollPosition - cardWidth, 0));
@@ -76,12 +77,37 @@ export default function Home() {
     setScrollPosition(Math.min(scrollPosition + cardWidth, maxScroll));
   };
 
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (scrollContainerRef.current && scrollContainerRef.current.contains(e.target)) {
+        e.preventDefault();
+        const maxScroll = (pastEvents.length - 1) * cardWidth;
+        // Handle both horizontal (deltaX) and vertical (deltaY) scrolling
+        // Trackpads use deltaX for horizontal gestures, deltaY for vertical
+        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        const newPosition = scrollPosition + delta;
+        setScrollPosition(Math.max(0, Math.min(newPosition, maxScroll)));
+      }
+    };
+
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, [scrollPosition, cardWidth]);
+
   return (
     <>
       {/* Hero Section */}
       <div className="relative py-16 min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-gray-900 text-white">
         {/* Animated background grid */}
-<div className="absolute inset-0 bg-[linear-gradient(to_right,#3c0d0d_1px,transparent_1px),linear-gradient(to_bottom,#3c0d0d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
+<div className="absolute inset-0 bg-[linear-gradient(to_right,#3c0d0d_1px,transparent_1px),linear-gradient(to_bottom,#3c0d0d_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
         
         {/* Gradient orbs */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-red-900/40 rounded-full blur-3xl animate-pulse"></div>
@@ -96,7 +122,7 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-5xl p-3 md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-400 via-rose-500 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl p-3 md:text-7xl font-bold mb-6 bg-linear-to-r from-red-400 via-rose-500 to-amber-600 bg-clip-text text-transparent">
             McMaster Cyber Society
           </h1>
           
@@ -106,7 +132,7 @@ export default function Home() {
 
           {/* Featured Event Card */}
           <div className="mb-12">
-            <div className="bg-gradient-to-br from-red-900/30 to-red-800/20 border-2 border-red-500/50 rounded-3xl p-8 backdrop-blur-sm shadow-2xl shadow-red-900/30 max-w-2xl mx-auto">
+            <div className="bg-linear-to-br from-red-900/30 to-red-800/20 border-2 border-red-500/50 rounded-3xl p-8 backdrop-blur-sm shadow-2xl shadow-red-900/30 max-w-2xl mx-auto">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <FaCalendarAlt className="text-red-400 text-xl" />
                 <span className="text-red-400 font-bold text-sm uppercase tracking-wide">Next Event</span>
@@ -135,7 +161,7 @@ export default function Home() {
                 href="https://www.bouncelife.com/organizations/685c7166831541b7d83256ea"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block bg-gradient-to-r from-red-800 to-red-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-red-900/50 transition-all hover:scale-105"
+                className="inline-block bg-linear-to-r from-red-800 to-red-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-red-900/50 transition-all hover:scale-105"
               >
                 Register on Bounce
               </a>
@@ -156,7 +182,7 @@ export default function Home() {
 
           <Link 
             to="/info"
-            className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105"
+            className="inline-block bg-linear-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105"
           >
             Learn More
           </Link>
@@ -194,7 +220,10 @@ export default function Home() {
             </button>
 
             {/* Events Scroll Container */}
-            <div className="overflow-x-auto overflow-y-hidden scrollbar-hide md:overflow-hidden snap-x snap-mandatory">
+            <div 
+              ref={scrollContainerRef}
+              className="overflow-x-auto overflow-y-hidden scrollbar-hide md:overflow-hidden snap-x snap-mandatory"
+            >
               <div 
                 className="flex gap-6 md:transition-transform md:duration-500 md:ease-out pb-4"
                 style={{ transform: `translateX(-${scrollPosition}px)` }}
