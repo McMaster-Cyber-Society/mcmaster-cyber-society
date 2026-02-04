@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-gray-900 text-white">
+      <div className="relative py-16 min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-gray-900 text-white">
         {/* Animated background grid */}
 <div className="absolute inset-0 bg-[linear-gradient(to_right,#3c0d0d_1px,transparent_1px),linear-gradient(to_bottom,#3c0d0d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
         
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-400 via-rose-500 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl p-3 md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-400 via-rose-500 to-amber-600 bg-clip-text text-transparent">
             McMaster Cyber Society
           </h1>
           
